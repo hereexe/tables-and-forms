@@ -1,20 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Форма выбора питомца</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-<main>
-    <h1>Найди себе друга!</h1>
+    <main>
+        <h1>Найди себе друга!</h1>
 
-    <section class="wrapper">
-        <form action="#">
+        <form action="/pets/orders" method="POST">
+            <div>
+                <label for="petType">Тип питомца:</label>
+                <select id="petType" name="petType" required>
+                    <option value="cat" selected>Кошка</option>
+                    <option value="dog">Собака</option>
+                    <option value="tiger">Тигр</option>
+                </select>
+            </div>
 
+            <div>
+                <label>Пол питомца:</label>
+                <label><input type="radio" name="gender" value="boy" required> Мальчик</label>
+                <label><input type="radio" name="gender" value="girl"> Девочка</label>
+                <label><input type="radio" name="gender" value="none" checked> Неизвестно</label>
+            </div>
+
+            <div>
+                <label for="eyeColor">Цвет глаз:</label>
+                <input type="color" id="eyeColor" name="eyeColor" value="#000000" required>
+            </div>
+
+            <div>
+                <label for="tailLength">Длина хвоста (см):</label>
+                <input type="number" id="tailLength" name="tailLength" min="7" max="120" value="20" required>
+            </div>
+
+            <div>
+                <label for="name">Имя:</label>
+                <input type="text" id="name" name="name" minlength="3" maxlength="50" placeholder="Барсик" required>
+            </div>
+
+            <div>
+                <label for="dateOfBirth">Дата рождения:</label>
+                <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+            </div>
+
+            <div>
+                <label for="email">Email владельца:</label>
+                <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+            </div>
+
+            <div>
+                <label for="phone">Телефон:</label>
+                <input type="tel" id="phone" name="phone" placeholder="+7 (999) 000-00-00" required>
+            </div>
+
+            <div>
+                <label>
+                    <input type="checkbox" name="rules" value="true" required>
+                    Согласен с правилами оформления
+                </label>
+            </div>
+
+            <div>
+                <button type="submit">Отправить</button>
+                <button type="reset">Сбросить</button>
+            </div>
         </form>
-    </section>
-
-</main>
+    </main>
 </body>
+
 </html>
